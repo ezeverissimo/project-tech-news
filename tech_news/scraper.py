@@ -23,9 +23,6 @@ def scrape_novidades(html_content):
     selector = Selector(text=html_content)
     links: list = selector.css("a.cs-overlay-link::attr(href)").getall()
 
-    if len(links) < 1:
-        return list()
-
     return links
 
 
