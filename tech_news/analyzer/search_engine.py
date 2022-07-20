@@ -33,4 +33,7 @@ def search_by_tag(tag):
 
 # Requisito 9
 def search_by_category(category):
-    """Seu código deve vir aqui"""
+    noticies = search_news({"category": re.compile(category, re.IGNORECASE)})
+    tuple_news = [(notice["title"], notice["url"]) for notice in noticies]
+
+    return tuple_news
