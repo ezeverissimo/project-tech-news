@@ -13,7 +13,7 @@ def search_by_title(title: str):
 # Requisito 7
 def search_by_date(date):
     year, month, day = date.split("-")
-    if len(year) < 4 or int(year) < 2021:
+    if int(year) < 2021:
         raise ValueError("Data inválida")
 
     date_formated = f"{day}/{month}/{year}"
