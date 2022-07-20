@@ -73,9 +73,9 @@ def get_tech_news(amount):
     tech_news = list()
 
     while True:
-        for noticie_url in noticies[:amount]:
-            html_noticie = fetch(noticie_url)
-            tech_news.append(scrape_noticia(html_noticie))
+        for notice_url in noticies[:amount]:
+            html_notice = fetch(notice_url)
+            tech_news.append(scrape_noticia(html_notice))
             amount -= 1
 
         if amount < 1:
