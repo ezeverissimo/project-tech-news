@@ -12,7 +12,15 @@ def search_by_title(title: str):
 
 # Requisito 7
 def search_by_date(date):
-    """Seu código deve vir aqui"""
+    year, month, day = date.split("-")
+    if len(year) < 4 or int(year) < 2021:
+        raise ValueError("Data inválida")
+
+    date_formated = f"{day}/{month}/{year}"
+    noticies = search_news({"timestamp": date_formated})
+    tuple_news = [(notice["title"], notice["url"]) for notice in noticies]
+
+    return tuple_news
 
 
 # Requisito 8
