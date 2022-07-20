@@ -25,7 +25,10 @@ def search_by_date(date):
 
 # Requisito 8
 def search_by_tag(tag):
-    """Seu código deve vir aqui"""
+    noticies = search_news({"tags": re.compile(tag, re.IGNORECASE)})
+    tuple_news = [(notice["title"], notice["url"]) for notice in noticies]
+
+    return tuple_news
 
 
 # Requisito 9
